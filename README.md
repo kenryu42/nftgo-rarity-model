@@ -8,7 +8,7 @@ Implementation of a rarity algorithm for nft ranking using Jaccard distance.
 
 ## Installation
 
-Install the dependencies and devDependencies and run the script.
+Install the dependencies and run the script.
 The script will take about 2 minutes to complete.
 
 ```sh

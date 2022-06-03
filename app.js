@@ -52,3 +52,4 @@ for (let i = 0; i < collectionSize; i++) {
 }
 
 fs.writeFileSync('bayc_ranking.json', JSON.stringify(metadata, null, 4));
+console.log(`\nResult saved to bayc_ranking.json`);
