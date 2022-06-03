@@ -1,6 +1,6 @@
 # NFTGO Rarity Model
 
-Implementation of a rarity algorithm for nft ranking using Jaccarf distance.
+Implementation of a rarity algorithm for nft ranking using Jaccard distance.
 
 ## Medium article
 
