@@ -6,6 +6,10 @@ Implementation of a rarity algorithm for nft ranking using Jaccard distance.
 
 [The ultimate guide to NFTGO’s new rarity model](https://nftgo.medium.com/the-ultimate-guide-to-nftgos-new-rarity-model-3f2265dd0e23)
 
+## NFT Metadata
+
+Bored Ape Yacht Club
+
 ## Installation
 
 Install the dependencies and run the script.
