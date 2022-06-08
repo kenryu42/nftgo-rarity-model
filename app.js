@@ -8,23 +8,31 @@ const scores = [];
 
 // Jaccard Distance function
 const jaccardDistance = (a, b) => {
-    const aSet = new Set(a.attributes.map((a) => a.value));
-    const bSet = new Set(b.attributes.map((b) => b.value));
+    const aSet = new Set(a.attributes.map((a) => a.trait_type + a.value));
+    const bSet = new Set(b.attributes.map((b) => b.trait_type + b.value));
     const union = new Set([...aSet, ...bSet]);
     const intersection = new Set([...aSet].filter((x) => bSet.has(x)));
 
     return 1 - intersection.size / union.size;
 };
 
+const dp = [...Array(collectionSize)].map(() => Array(collectionSize).fill(0));
+
 // Iterate through collection and calculate the jaracard distance average score
 for (let i = 0; i < collectionSize; i++) {
-    console.log(`Calculating jaccard distance for tokenId ${i}...`);
+	console.log(`Calculating jaccard distance for tokenId ${i}...`);
     let score = 0;
 
     for (let j = 0; j < collectionSize; j++) {
         if (i !== j) {
-            const jd = jaccardDistance(metadata[i], metadata[j]);
-            score += jd;
+            if (dp[i][j]) {
+                score += dp[i][j];
+            } else {
+                const jd = jaccardDistance(metadata[i], metadata[j]);
+                score += jd;
+                dp[i][j] = jd;
+                dp[j][i] = jd;
+            }
         }
     }
 
